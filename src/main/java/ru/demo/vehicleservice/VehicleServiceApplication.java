@@ -4,6 +4,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import ru.demo.vehicleservice.domain.vehicle.Manufacturer;
 import ru.demo.vehicleservice.domain.vehicle.Model;
+import ru.demo.vehicleservice.domain.vehicle.PassengerCar;
 
 @SpringBootApplication
 class VehicleServiceApplication {
@@ -19,6 +20,9 @@ class VehicleServiceApplication {
             System.out.println(elements);
         }
 
+        PassengerCar passengerCar = new PassengerCar.PassengerCarBuilder((byte) 4, "Front wheel").
+        setHasBigVehicle(false).setHasOffRoadVehicle(false).build();
+        System.out.println(passengerCar);
         // создание объектов через builder
     }
 }
