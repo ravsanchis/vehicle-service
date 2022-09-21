@@ -1,12 +1,18 @@
 package ru.demo.vehicleservice.domain.vehicle;
 
-public final class Truck extends Vehicle{
+final class Truck extends Vehicle {
 
-    @Override
-    public Truck getNewVehicle() {
-        Truck truck = new Truck();
-        truck.setVehicleModel(Model.K4562);
-        truck.setVehicleType(Manufacturer.KAMAZ);
-        return truck;
+    private int carrying;
+
+    public Truck(Manufacturer manufacturer, Model model) {
+        super(manufacturer, model);
+    }
+
+    public int getCarrying() {
+        return carrying;
+    }
+
+    public void setCarrying(int carrying) {
+        this.carrying = carrying;
     }
 }

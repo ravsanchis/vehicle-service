@@ -1,53 +1,58 @@
 package ru.demo.vehicleservice.domain.vehicle;
 
-public abstract class Vehicle {
+ public abstract class Vehicle {
 
-    private Enum vehicleModel;
-    private Enum vehicleType;     // убрать car, сделать enum, добавить бренд
-    private short vehicleWeight;
-    private float engineVolume;
+    private final Manufacturer manufacturer;
+    private final Model model;
+    private Engine engine;
+    private short weight;
+    private short seatsCount;
 
-    public Enum getVehicleModel() {
-        return vehicleModel;
+    protected Vehicle(Manufacturer manufacturer, Model model) {
+        this.manufacturer = manufacturer;
+        this.model = model;
     }
 
-    public void setVehicleModel(Enum vehicleModel) {
-        this.vehicleModel = vehicleModel;
+    public Manufacturer getManufacturer() {
+        return manufacturer;
     }
 
-    public Enum getVehicleType() {
-        return vehicleType;
+    public Model getModel() {
+        return model;
     }
 
-    public void setVehicleType(Enum vehicleType) {
-        this.vehicleType = vehicleType;
+    public Engine getEngine() {
+        return engine;
     }
 
-    public short getVehicleWeight() {
-        return vehicleWeight;
+    public void setEngine(Engine engine) {
+        this.engine = engine;
     }
 
-    public void setVehicleWeight(short vehicleWeight) {
-        this.vehicleWeight = vehicleWeight;
+    public short getWeight() {
+        return weight;
     }
 
-    public float getEngineVolume() {
-        return engineVolume;
+    public void setWeight(short weight) {
+        this.weight = weight;
     }
 
-    public void setEngineVolume(float engineVolume) {
-        this.engineVolume = engineVolume;
+    public short getSeatsCount() {
+        return seatsCount;
+    }
+
+    public void setSeatsCount(short seatsCount) {
+        this.seatsCount = seatsCount;
     }
 
     @Override
     public String toString() {
         return "Vehicle{" +
-                "vehicleModel=" + vehicleModel +
-                ", vehicleType=" + vehicleType +
-                ", vehicleWeight=" + vehicleWeight +
-                ", engineVolume=" + engineVolume + '\'' +
+                "manufacturer=" + manufacturer +
+                ", model=" + model +
+                ", engine=" + engine +
+                ", weight=" + weight +
+                ", seatsCount=" + seatsCount +
                 '}';
     }
-
-    public abstract Object getNewVehicle();
 }

@@ -6,7 +6,5 @@ public enum Manufacturer {
 
     ICARUS, HYUNDAI, MAN, RENAULT, VOLVO,
 
-    CAT, DAF, KAMAZ, FREIGHTLINER, UAZ, SCANIA;
-
-
+    CAT, DAF, KAMAZ, FREIGHTLINER, UAZ, SCANIA
 }
